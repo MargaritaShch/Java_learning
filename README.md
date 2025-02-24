@@ -15,7 +15,7 @@
 `if-else`, `switch-case`
 
 ### 5. Циклы (`_05_Loops/`)
-`for`, `while`,`do-while` 
+`for`, `while`,`do-while`,`for Each` 
 
 ### 6. Практические задания (`TASKS/`)
 #### `Задачи по темам 1,2,3,4 (см.пункты выше)` 
