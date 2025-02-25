@@ -1,5 +1,6 @@
 package COURSE_TASKS.Task_02;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DoWhile implements Loops {
@@ -50,6 +51,19 @@ public class DoWhile implements Loops {
 */
     @Override
     public int[] sort(int[] ints, boolean isAsc){
-
+        int[] sortArr = Arrays.copyOf(ints, ints.length);
+        //сортировка по возрастанию
+        Arrays.sort(sortArr);
+        int i = 0;
+        if(isAsc == false){
+            do{
+                int temp = sortArr[i];
+                        sortArr[i] = sortArr[sortArr.length - 1 - i];
+                        sortArr[sortArr.length - 1 - i] = temp;
+                        i++;
+            } 
+            while(i < sortArr.length / 2);
+        }         
+        return sortArr;
     }
 }

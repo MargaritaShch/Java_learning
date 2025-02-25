@@ -1,6 +1,7 @@
 package COURSE_TASKS.Task_02;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Fori implements Loops {
 /* TODO разработать метод sumAllNumbers
@@ -42,6 +43,16 @@ public class Fori implements Loops {
 */
     @Override
     public int[] sort(int[] ints, boolean isAsc){
-        
+        int[] sortArr = Arrays.copyOf(ints, ints.length);
+        //сортировка по возрастанию
+        Arrays.sort(sortArr);
+        if(isAsc == false){
+            for(int i = 0; i < sortArr.length / 2; i++){
+                int temp = sortArr[i];
+                sortArr[i] = sortArr[sortArr.length - 1 - i];
+                sortArr[sortArr.length - 1 - i] = temp;
+            }    
+        }
+        return sortArr;
     }
 }

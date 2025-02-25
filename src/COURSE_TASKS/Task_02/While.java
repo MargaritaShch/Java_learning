@@ -1,5 +1,7 @@
 package COURSE_TASKS.Task_02;
 
+import java.util.Arrays;
+
 public class While implements Loops{
 /* TODO разработать метод sumAllNumbers
 1. Метод должен возвращать сумму всех чисел от 1 до а (включительно)
@@ -12,6 +14,7 @@ public class While implements Loops{
 
         while(num<=a){
             sum +=num;
+            num++;
         }
         return sum;
     }
@@ -43,6 +46,18 @@ public class While implements Loops{
 */
     @Override
     public int[] sort(int[] ints, boolean isAsc){
-        
+        int[] sortArr = Arrays.copyOf(ints, ints.length);
+        //сортировка по возрастанию
+        Arrays.sort(sortArr);
+        int i = 0;
+        if(isAsc == false){
+            while(i < sortArr.length / 2){
+                int temp = sortArr[i];
+                    sortArr[i] = sortArr[sortArr.length - 1 - i];
+                    sortArr[sortArr.length - 1 - i] = temp;
+                    i++;
+            }
+        }  
+        return sortArr;
     }
 }
