@@ -17,10 +17,12 @@
 ### 5. Циклы (`_05_Loops/`)
 `for`, `while`,`do-while`,`for Each` 
 
-### 6. Практические задания (`TASKS/`)
-#### `Задачи по темам 1,2,3,4 (см.пункты выше)` 
+### 6. Массивы и их методы(`_06_Arrays/`)
 
-### 7. Практические задания (`COURSE_TASKS/`)
+### 7. Практические задания (`TASKS/`)
+#### `Задачи по темам 1,2,3,4,5,6 (см.пункты выше)` 
+
+### 8. Практические задания (`COURSE_TASKS/`)
 #### `Task_01` - **Класс `Programmer`**
 - Создан класс `Programmer` с полями:
   - `name` (имя)
@@ -36,8 +38,32 @@
   - `programmer1.isKnowJava = false;`
   - `programmer2.isKnowJava = true;` 
 
-  
-## Запуск 
+### 9. Практические задания (`COURSE_TASKS/`)
+#### `Task_02` - **Работа с циклами, факториалом и сортировкой массива**
+- Реализован интерфейс `Loops`, содержащий методы:
+  - `sumAllNumbers(int a)` – возвращает сумму всех чисел от `1` до `a` (включительно).
+  - `factorial(int b)` – вычисляет факториал числа `b` (при `b < 10`).
+  - `sort(int[] ints, boolean isAsc)` – сортирует массив чисел (`true` – по возрастанию, `false` – по убыванию).
+  - `sort(int[] ints)` – сортирует массив чисел по убыванию.
+
+- Созданы три класса, реализующие интерфейс `Loops`:
+  `While`, `DoWhile`, `Fori`
+
+- В `Main.java` выполнены:
+  - **Сумма всех чисел (`sumAllNumbers`)**  
+    - `whileLoop.sumAllNumbers(number);`
+    - `doWhileLoop.sumAllNumbers(number);`
+    - `forLoop.sumAllNumbers(number);`
+  - **Факториал числа (`factorial`)**  
+    - `whileLoop.factorial(number);`
+    - `doWhileLoop.factorial(number);`
+    - `forLoop.factorial(number);`
+  - **Сортировка массива (`sort`)**  
+    - `whileLoop.sort(array, isAsc);`
+    - `doWhileLoop.sort(array, isAsc);`
+    - `forLoop.sort(array, isAsc);`
+    - 
+## Пример запуска 
 ```sh
 # Компиляция
 javac -d src src/COURSE_TASKS/Task_01/*.java
