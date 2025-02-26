@@ -62,7 +62,9 @@
     - `whileLoop.sort(array, isAsc);`
     - `doWhileLoop.sort(array, isAsc);`
     - `forLoop.sort(array, isAsc);`
-    - 
+    - - `whileLoop.sort(array);`
+    - `doWhileLoop.sort(array);`
+    - `forLoop.sort(array);` 
 ## Пример запуска 
 ```sh
 # Компиляция
