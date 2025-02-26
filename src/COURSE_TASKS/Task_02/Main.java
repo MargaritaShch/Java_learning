@@ -27,6 +27,8 @@ public class Main {
         System.out.println("For: " + Arrays.toString(forLoop.sort(array, isAsc))); 
 
         System.out.println("\n=== ЗАДАЧИ ПО SORT ARRAYS ===");
+        System.out.println("While: " + Arrays.toString(whileLoop.sort(array)));
+        System.out.println("DoWhile: " + Arrays.toString(doWhileLoop.sort(array)));
+        System.out.println("For: " + Arrays.toString(forLoop.sort(array))); 
     }
-    
 }

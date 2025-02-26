@@ -66,4 +66,23 @@ public class DoWhile implements Loops {
         }         
         return sortArr;
     }
+
+/* TODO разработать метод sort
+1. Метод должен возвращать отсортированный массив чисел
+2. Отсортированный массив должен быть по убыванию
+*/
+    public int[] sort(int[] ints){
+        int[] arr = Arrays.copyOf(ints, ints.length);
+        int i = 0;
+        Arrays.sort(arr);
+        do{
+            int temp = arr[i];
+            arr[0] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+            i++;
+        }
+        while(i < arr.length /2);
+            
+        return arr;
+    }
 }
