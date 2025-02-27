@@ -86,7 +86,7 @@ public Object SUMIF(Object[] objects1, String condition, Object[] objects2){
 1. переиспльзовать метод SUMIF (читай документацию https://support.google.com/docs/answer/3093583?hl=ru&sjid=566149943412964060-EU)
 */
 public Object SUMIF(Object[] objects1, String condition){
-
+    return SUMIF(objects1, condition,  objects1);
 }
 
 }

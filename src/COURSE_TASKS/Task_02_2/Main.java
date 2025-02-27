@@ -17,6 +17,9 @@ public class Main {
         Object[] objects2 = {100, 50, 200, 150, 300, 250};
         String condition1 = ">10";
         String condition2 = "<20";
-        System.out.println(math.SUMIF(objects1, condition2, objects2));
+        // System.out.println(math.SUMIF(objects1, condition2, objects2));
+
+        System.out.println("=== ЗАДАЧA SUMIF ПЕРЕИСПОЛЬЗОВАНИЕ ===");
+        System.out.println(math.SUMIF(objects1, condition2));
     }
 }
