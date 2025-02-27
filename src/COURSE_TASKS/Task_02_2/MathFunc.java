@@ -33,9 +33,55 @@ public static double o2double(Object o){
 5. вернуть "N/A. Object is not integer but must be" если condition начинается с ><= и в objects1 не число
 */
 public Object SUMIF(Object[] objects1, String condition, Object[] objects2){
+    String[] operators = {">=", "<=", ">", "<"};
+    boolean isNumCondition = false;
+    double conditionValue = 0;
+    String operatorFound = "";
+    double sum = 0;
 
+
+    if(objects1.length != objects2.length){
+        return  "N/A. Не соответствуют размерности";
+    }
+
+    for(String op : operators){
+        if(condition.startsWith(op)){
+            isNumCondition = true;
+            operatorFound = op;
+
+            try {
+                conditionValue = Double.parseDouble(condition.substring(op.length()).trim());
+            } catch(NumberFormatException e){
+                return "N/A. Не числовой формат";
+            }
+            break;
+        }
+    }
+
+    
+    for (int i = 0; i < objects1.length; i++) {
+        //eсли числовое условие
+        if (isNumCondition) {
+            if (!isNumber(objects1[i])) {
+                return "N/A. Object is not integer but must be";
+            }
+            
+            double objValue = o2double(objects1[i]);
+
+            if ((operatorFound.equals(">") && objValue > conditionValue) ||
+                (operatorFound.equals("<") && objValue < conditionValue) ||
+                (operatorFound.equals(">=") && objValue >= conditionValue) ||
+                (operatorFound.equals("<=") && objValue <= conditionValue)) {
+                sum += o2double(objects2[i]);
+            }
+        } else {
+            if (objects1[i].toString().equals(condition)) {
+                sum += o2double(objects2[i]);
+            }
+        }
+    }
+    return sum;
 }
-
 /*TODO разработать метод SUMIF
 1. переиспльзовать метод SUMIF (читай документацию https://support.google.com/docs/answer/3093583?hl=ru&sjid=566149943412964060-EU)
 */
