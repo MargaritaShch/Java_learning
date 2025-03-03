@@ -88,5 +88,4 @@ public Object SUMIF(Object[] objects1, String condition, Object[] objects2){
 public Object SUMIF(Object[] objects1, String condition){
     return SUMIF(objects1, condition,  objects1);
 }
-
 }
