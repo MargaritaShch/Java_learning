@@ -12,5 +12,7 @@ public class DoWhileLoopDemo {
         } while (!input.equals("exit"));
 
         System.out.println("Выход из программы");
+        scanner.close();
     }
+   
 }
