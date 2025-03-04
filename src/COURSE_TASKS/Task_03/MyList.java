@@ -1,8 +1,8 @@
-package school.xset.lesson3.list;
+package COURSE_TASKS.Task_03;
 
 import java.util.*;
 
-public class MyList implements List {
+public class MyList implements List<Object> {
 
     private Object[] array;
 
@@ -27,7 +27,7 @@ public class MyList implements List {
             1. метод должен проверять на вход невалидные индексы и выбрасывать исключение throw new IndexOutOfBoundsException();
             2. метод должен возвращать объект из array по индексу
          */
-        if (index < 0 || index > size()){
+        if (index < 0 || index >= size()){
             throw new IndexOutOfBoundsException();
         }
         return array[index];
@@ -66,8 +66,20 @@ public class MyList implements List {
             3. метод должен вернуть удаленный объект
          */
 
+         if (index < 0 || index >= size()){
+            throw new IndexOutOfBoundsException();
+        }
 
-        return null;
+        Object removeElem = array[index];
+
+        for(int i = index; i<=size()-1; i++){
+            array[i] = array[i+1];
+        }
+
+        //удалить поз-ию последнего эл-та
+        array[size()-1] = null;
+
+        return removeElem ;
     }
 
     @Override
@@ -76,7 +88,9 @@ public class MyList implements List {
             1. метод должен вернуть первый индекс позиции на которой находится объект o, если его нет, то вернуть -1
          */
         for (int i = 0; i < array.length; i++) {
-            if (array[i].equals(o)) return i;
+            if (Objects.equals(array[i], o)) {
+                return i;
+            }
         }
         return -1;
     }
@@ -86,6 +100,11 @@ public class MyList implements List {
         /* TODO Разработать метод lastIndexOf(Object o)
             1. метод должен вернуть последний индекс позиции на которой находится объект o, если его нет, то вернуть -1
          */
+        for(int i =size() -1; i>=0;i--){
+            if (Objects.equals(array[i], o)) {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -163,6 +182,7 @@ public class MyList implements List {
             1. метод должен удалять объект o
             2. метод должен вернуть false если такого объекта нет
          */
+
         return true;
     }
 

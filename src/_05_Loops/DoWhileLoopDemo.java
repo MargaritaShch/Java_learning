@@ -14,5 +14,4 @@ public class DoWhileLoopDemo {
         System.out.println("Выход из программы");
         scanner.close();
     }
-   
 }
