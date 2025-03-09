@@ -53,39 +53,37 @@ public class DoWhile implements Loops {
 2. если isAsc - true, то сортировка должна быть по возрастанию, иначе наоборот
 */
     @Override
-    public int[] sort(int[] ints, boolean isAsc){
-        int[] sortArr = Arrays.copyOf(ints, ints.length);
-        //сортировка по возрастанию
-        Arrays.sort(sortArr);
-        int i = 0;
-        if(isAsc == false){
-            do{
-                int temp = sortArr[i];
-                        sortArr[i] = sortArr[sortArr.length - 1 - i];
-                        sortArr[sortArr.length - 1 - i] = temp;
-                        i++;
-            } 
-            while(i < sortArr.length / 2);
-        }         
-        return sortArr;
+    public int[] sort(int[] ints, boolean isAsc) {
+        Arrays.sort(ints); 
+
+        //по убыв.
+        if (!isAsc) { 
+            int i = 0;
+            do {
+                int temp = ints[i];
+                ints[i] = ints[ints.length - 1 - i];
+                ints[ints.length - 1 - i] = temp;
+                i++;
+            } while (i < ints.length / 2);
+        }
+        return ints;
     }
 
 /* TODO разработать метод sort
 1. Метод должен возвращать отсортированный массив чисел
 2. Отсортированный массив должен быть по убыванию
 */
-    public int[] sort(int[] ints){
-        int[] arr = Arrays.copyOf(ints, ints.length);
+    public int[] sort(int[] ints) {
+        Arrays.sort(ints); 
         int i = 0;
-        Arrays.sort(arr);
-        do{
-            int temp = arr[i];
-            arr[0] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+        
+        do {
+            int temp = ints[i];
+            ints[i] = ints[ints.length - 1 - i];
+            ints[ints.length - 1 - i] = temp;
             i++;
-        }
-        while(i < arr.length /2);
-            
-        return arr;
+        } while (i < ints.length / 2);
+
+        return ints;
     }
 }

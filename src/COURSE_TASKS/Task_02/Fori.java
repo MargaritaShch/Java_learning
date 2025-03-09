@@ -44,18 +44,18 @@ public class Fori implements Loops {
 2. если isAsc - true, то сортировка должна быть по возрастанию, иначе наоборот
 */
     @Override
-    public int[] sort(int[] ints, boolean isAsc){
-        int[] sortArr = Arrays.copyOf(ints, ints.length);
-        //сортировка по возрастанию
-        Arrays.sort(sortArr);
-        if(isAsc == false){
-            for(int i = 0; i < sortArr.length / 2; i++){
-                int temp = sortArr[i];
-                sortArr[i] = sortArr[sortArr.length - 1 - i];
-                sortArr[sortArr.length - 1 - i] = temp;
-            }    
+    public int[] sort(int[] ints, boolean isAsc) {
+        Arrays.sort(ints);
+
+        //по убыв
+        if (!isAsc) { 
+            for (int i = 0; i < ints.length / 2; i++) {
+                int temp = ints[i];
+                ints[i] = ints[ints.length - 1 - i];
+                ints[ints.length - 1 - i] = temp;
+            }
         }
-        return sortArr;
+        return ints;
     }
 
 /* TODO разработать метод sort
@@ -63,16 +63,15 @@ public class Fori implements Loops {
 2. Отсортированный массив должен быть по убыванию
 */
     @Override
-    public int[] sort(int[] ints){
-        int[] arr = Arrays.copyOf(ints, ints.length);
-        Arrays.sort(arr);
-        for(int i = 0; i<arr.length /2 ; i++){
-            int temp = arr[i];
-            arr[0] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
-        }
-        return arr;
-    }
-       
+    public int[] sort(int[] ints) {
+        Arrays.sort(ints); 
 
+        for (int i = 0; i < ints.length / 2; i++) {
+            int temp = ints[i];
+            ints[i] = ints[ints.length - 1 - i];
+            ints[ints.length - 1 - i] = temp;
+        }
+
+        return ints;
+    }
 }
