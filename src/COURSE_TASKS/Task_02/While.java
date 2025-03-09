@@ -29,9 +29,11 @@ public class While implements Loops{
         long result = 1;
         
         //искл. 
-        if (b <= 1) {
-            return 1;
+        if (b < 0 || b >= 10) {
+            throw new IllegalArgumentException("ERROR: b must be in the range [0, 9]");
         }
+
+        if (b == 0) return 1;
 
         while(num <=b){
             result *= num;

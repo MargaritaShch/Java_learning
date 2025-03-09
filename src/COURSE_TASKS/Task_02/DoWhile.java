@@ -30,10 +30,13 @@ public class DoWhile implements Loops {
         int num = 1;
         long result = 1;
         
-        //искл. 
-        if (b <= 1) {
-            return 1;
+       //искл.
+        if (b < 0 || b >= 10) {
+            throw new IllegalArgumentException("ERROR: b must be in the range [0, 9]");
         }
+
+        //0! = 1
+        if (b == 0) return 1;
 
         do{
             result *= num;

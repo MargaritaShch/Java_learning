@@ -7,7 +7,7 @@ public class Main {
         Loops doWhileLoop = new DoWhile();
         Loops forLoop = new Fori();
 
-        int number = 5;
+        int number = 8;
         int[] array = {5, 3, 8, 1, 2};
         boolean isAsc = false;
 
