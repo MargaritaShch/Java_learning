@@ -74,16 +74,6 @@ public class DoWhile implements Loops {
 2. Отсортированный массив должен быть по убыванию
 */
     public int[] sort(int[] ints) {
-        Arrays.sort(ints); 
-        int i = 0;
-        
-        do {
-            int temp = ints[i];
-            ints[i] = ints[ints.length - 1 - i];
-            ints[ints.length - 1 - i] = temp;
-            i++;
-        } while (i < ints.length / 2);
-
-        return ints;
+        return sort(ints, false); 
     }
 }

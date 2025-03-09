@@ -69,16 +69,6 @@ public class While implements Loops{
 */
     @Override
     public int[] sort(int[] ints) {
-        Arrays.sort(ints); 
-        int i = 0;
-        
-        while (i < ints.length / 2) {
-            int temp = ints[i];
-            ints[i] = ints[ints.length - 1 - i];
-            ints[ints.length - 1 - i] = temp;
-            i++;
-        }
-
-        return ints;
+        return sort(ints, false); 
     }
 }

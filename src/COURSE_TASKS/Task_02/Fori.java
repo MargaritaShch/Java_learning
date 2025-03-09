@@ -64,14 +64,6 @@ public class Fori implements Loops {
 */
     @Override
     public int[] sort(int[] ints) {
-        Arrays.sort(ints); 
-
-        for (int i = 0; i < ints.length / 2; i++) {
-            int temp = ints[i];
-            ints[i] = ints[ints.length - 1 - i];
-            ints[ints.length - 1 - i] = temp;
-        }
-
-        return ints;
+        return sort(ints, false); 
     }
 }
